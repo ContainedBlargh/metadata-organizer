@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Index of Templates</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.css">
+</head>
+
+<body>
+    <div class="ui container">
+        <div class="ui grid">
+            <div class="sixteen wide column">
+                <h1>Index of Templates</h1>
+
+                <ul>
+                    {% for template in metadata %}
+                    <li><a href="/template/{{ template.name }}">{{ template.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

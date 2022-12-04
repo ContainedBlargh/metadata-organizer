@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Metadata</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.css">
+    </head>
+    <body>
+        <div class="ui container">
+            <div class="ui grid">
+                <div class="sixteen wide column">
+                    {% if metadata %}
+                        <table class="ui celled striped table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th>Duration</th>
+                                    <th>Text</th>
+                                    <th>Keywords</th>
+                                    <th>Headings</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in metadata %}
+                                    <tr>
+                                        <td>{{ row.name }}</td>
+                                        <td>{{ row.type }}</td>
+                                        <td>{{ row.size }}</td>
+                                        <td>{{ row.duration }}</td>
+                                        <td>{{ row.text }}</td>
+                                        <td>{{ row.keywords }}</td>
+                                        <td>{{ row.headings }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p>No metadata found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
